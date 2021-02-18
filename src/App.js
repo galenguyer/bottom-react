@@ -23,12 +23,13 @@ function translateToBottom() {
 
 function discordToEmoji(text) {
   return text
-    .replaceAll(':people_hugging:', '🫂')
-    .replaceAll(':sparkling_heart:', '💖')
-    .replaceAll(':sparkles:', '✨')
-    .replaceAll(':pleading_face:', '🥺')
-    .replaceAll(':heart:', '❤️')
-    .replaceAll(':point_right::point_left:', '👉👈')
+    .replaceAll(':', '')
+    .replaceAll('people_hugging', '🫂')
+    .replaceAll('sparkling_heart', '💖')
+    .replaceAll('sparkles', '✨')
+    .replaceAll('pleading_face', '🥺')
+    .replaceAll('heart', '❤️')
+    .replaceAll('point_rightpoint_left', '👉👈')
     .replaceAll(' ', '')
 }
 

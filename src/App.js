@@ -22,14 +22,31 @@ function translateToBottom() {
 }
 
 function discordToEmoji(text) {
-  
+  return text
+    .replaceAll(':people_hugging:', '🫂')
+    .replaceAll(':sparkling_heart:', '💖')
+    .replaceAll(':sparkles:', '✨')
+    .replaceAll(':pleading_face:', '🥺')
+    .replaceAll(':heart:', '❤️')
+    .replaceAll(':point_right::point_left:', '👉👈')
+    .replaceAll(' ', '')
 }
 
 function translateToTop() {
   if (document.getElementById('bottom-text') == null || document.getElementById('top-text') == null) {
     return; 
   }
-  document.getElementById('top-text').value = decode(document.getElementById('bottom-text').value);
+  let bText = document.getElementById('bottom-text').value;
+  if (bText.includes(':')) {
+    bText = discordToEmoji(bText);
+    document.getElementById('bottom-text').value = bText;
+  }
+  try { 
+    document.getElementById('top-text').value = decode(bText);
+  }
+  catch {
+    document.getElementById('top-text').value = 'Invalid bottom text';
+  }
 }
 
 

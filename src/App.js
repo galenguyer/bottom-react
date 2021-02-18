@@ -38,8 +38,9 @@ function translateToTop() {
     return; 
   }
   let bText = document.getElementById('bottom-text').value;
-  if (bText.includes(':')) {
+  if (bText.includes(':') || bText.includes('a')) {
     bText = discordToEmoji(bText);
+    console.log(bText);
     document.getElementById('bottom-text').value = bText;
   }
   try { 

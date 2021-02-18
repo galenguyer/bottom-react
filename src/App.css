@@ -6,6 +6,7 @@
   font-family: Arial, Helvetica, sans-serif;
   border-radius: 8px;
   padding: 8px;
+  resize: none;
 }
 
 #top-text {
